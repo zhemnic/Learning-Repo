@@ -1,0 +1,309 @@
+@import url(
+	'https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* { 
+	margin:0; padding:0; 
+	/*
+	background-color: #e5e5f7;
+	opacity: 0.8;
+	background-image:  repeating-linear-gradient(45deg, #444cf7 25%, transparent 25%, transparent 75%, #444cf7 75%, #444cf7), repeating-linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%, #e5e5f7 75%, #444cf7 75%, #444cf7);
+	background-position: 0 0, 10px 10px;
+	background-size: 20px 20px;*/
+	}
+
+	/*
+html{
+	background-image: linear-gradient(to right, grey, orange, green, purple);
+	background-repeat: no-repeat;
+	background-size: cover;
+}*/
+
+body{
+   font-family: 'Roboto', sans-serif;
+}
+
+h1{
+	color:  #FF0000;
+	text-align: center;
+	text-shadow: 4px 4px 5px rgb(71,10,10);
+}
+
+.title{
+	color: orange;
+
+}
+
+.definition{
+	border:  15px dashed green;
+	padding: 20px;
+	margin-top:  25px;
+	margin-bottom:  25px;
+}
+
+.flex-parent{
+	display:  flex;
+
+	/*
+		If you have more than 1 elements inside the parent
+		use flex wrap, so that elements can jump to othe bottom and 
+		use the space without losing width and height, ON RESIZE.
+
+		If there is no flex-wrap, then items will remain 
+		inline-block and they will get smaller ON RESIZE.
+	*/
+	flex-wrap: wrap;
+
+
+	/*
+		Center your elements
+		safe center -> elements are always at the center
+		flex-start  -> elements will wrap from right to left
+		flex-end	-> elements will wrap from left to right
+		space-between -> space between the elements so that 
+						 they all occupy the 
+
+		space-around	-> will use space aound them to 
+	*/
+	justify-content: safe center;
+
+	/*
+		TEXT DIRECTION
+		row-reverse -> reverse the elements on the rows
+
+	*/
+
+	margin:  30px;
+	border:  3px dashed purple;
+}
+
+.box{
+	/* 
+	** DISPLAY **
+
+	initial		-> sets the property to its default value
+				-> if it was a block by default, then it will return 
+				-> to a block display
+
+	inherit		-> inherits the property from its parent element
+
+	block 		-> will display as a block, meaning that it will start 
+				-> on a new line and take up the whole width 
+				-> of the page
+
+	inline 		-> will follow the text/image/span inside the line 
+				-> height and width will have no effect
+
+	inline-block-> 
+	*/
+
+	/*display:  inline-block;*/
+
+	height:  200px;
+	width:  200px;
+	background: #004dae;
+	margin:  10px;
+}
+
+/* 
+	Animation 
+	@keyframes <animation name>
+	opacity -> 0 to 1 0:invisible 1:  visible;
+
+ */
+@keyframes fadeMe{
+	0%{
+		opacity:  1;
+	}
+
+	100%{
+		opacity:  0;
+	}
+
+}
+
+#box1{
+	animation-name: fadeMe;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	/* linear -> speed of the animation to stay the same 
+			  -> until the end */
+	animation-timing-function: linear;
+}
+
+
+@keyframes rotation{
+	0%{
+		transform: rotate(90deg);
+	}
+
+	50%{
+		transform: rotate(180deg);	
+	}
+
+	100%{
+		transform: rotate(360deg);	
+	}
+}
+
+#box2{
+	animation-name:  rotation;
+	animation-duration: 5s;
+	animation-iteration-count: 4s;
+	/*
+		ease-in-out -> slow in / slow out
+	*/
+	animation-timing-function: ease-in-out;
+	border-radius:  10%;
+	background-image:  
+		radial-gradient(circle, purple, orange, yellow, pink, purple);
+}
+
+/*
+	@keyframes ->
+	@-o-keyframes ->
+*/
+@keyframes getBigger{
+	0%{
+		/*
+			1 -> normal size
+		*/
+		transform: scale(1);
+	}
+
+	50%{
+		/*
+			2 -> twice the size
+		*/
+		transform: scale(2);
+	}
+
+	100%{
+		/*
+			0.5 -> half its normal size
+		*/
+		transform: scale(0.5);
+	}
+}
+
+#box3{
+	/* shorthand syntax for animations
+
+		animation-name:  getBigger;
+		animation-duration: infinite;
+		animation-iteration-count: 8s;
+		animation-timing-function: ease-in;
+	*/
+	animation:  getBigger 6s 8s ease-in;
+	border-radius: 50%;
+	background:  orange;
+}
+
+@keyframes changeColors{
+	0%  { background-color: grey;}
+	25% { background-color: purple;}
+	50% { background-color: yellow;}
+	75% { background-color: pink;}
+	100%{ background-color: grey;}
+}
+
+#box4{
+	/* forward 	-> keep the colour that was used in the 
+				   end of the animation */
+	animation:  changeColors 7s 2s forwards;
+}
+
+
+@keyframes moveBox{
+	/*
+		left:  	box starts animation from the left of the container
+				(0, 0)
+	*/
+	0% { left: 0px; top: 0px;}
+	25% { left: 100px; top: 0px;}
+	50% { left: 100px; top: 200px;}
+	75% { left: 0px; top: 200px;}
+	100% { left: 0px; top: 0px;}
+}
+
+#box5{
+	/*
+		fixed / sticky / absolute / relative?
+		fixed 	-> fixed on the coordinates as per the screen 
+				   so, scrolling will not remove it
+		sticky	-> 
+		absolute->
+		relative-> relative to the parent position
+	*/
+	position:  relative;
+	animation:  moveBox 5s 3s;
+	background:  red;
+}
+
+
+#box6{
+	position:  relative;
+	top:  10px;
+	left:  20px;
+}
+
+nav{
+	background-color: #004dae;
+	text-align: center;
+	font-size: large;
+	min-height: 10px;
+}
+
+nav a{
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+nav ul{
+	list-style: none;
+}
+
+/*
+	STYLING IMAGES
+*/
+
+img {
+	/*
+		box-shadow
+		8px 	-> shadow to the right of the picture (horizontal)
+		5px 	-> shadow to the bottom of the picture (vertical)
+		10px 	-> to blur the shadow
+		10px	-> shadow radius to make the shadow spread
+
+		colour 	-> the colour of the shadow  
+		inset 	-> shadow will go inside the shape/image/element
+	*/
+	box-shadow:  8px 8px 10px 8px rgb(154,159,160);
+}
+
+.circleImage{
+	border-radius: 50%;
+}
+
+h3{
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+form input, textarea, button{
+	display: block;
+	margin: 30px;
+}
+
+.contact-box{
+	display: flex;
+	justify-content: center;
+}
+
+.row{
+	margin: 30px;
+}
+
+.input-field{
+	margin: 20px;
+}

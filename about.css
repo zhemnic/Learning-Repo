@@ -1,0 +1,103 @@
+body {
+    margin: 40px;
+  }
+  
+  .wrapper {
+      display: grid;
+      grid-gap: 10px;
+
+      /*
+	  	there will be 5 columns	with 100px
+		there will be 3 rows: auto
+      */
+      grid-template-columns: repeat(5, [col] auto ) ;
+      grid-template-rows: repeat(3, [row] auto  );
+      background-color: #fff;
+      color: #444;
+    }
+  
+    .box {
+      background-color: #444;
+      color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 150%;
+
+	  /*
+		z-index -> used to stack elements in the direction of the 3rd dimension. You need to have a position other than static.
+	  */
+      z-index:10;
+  
+    }
+  
+    .a {
+		/* start at col1 and span 2 columns [1,2] */
+      grid-column: col / span  2;
+      grid-row: row ;
+	  display: flex;
+	  justify-content: center;
+    }
+    .b {
+
+		/* start at col3 and span 3 columns [3,4,5]*/
+      grid-column: col 4 / span  2 ;
+      grid-row: row ;
+	  display: flex;
+	  justify-content: center;
+    }
+    .c {
+		/* 
+		start at col1 BUT on grid-row: row2 [1]
+		first element on row 2
+		*/
+      grid-column: col / span 5 ;
+      grid-row: row 2 ;
+	  display: flex;
+	  justify-content: center;
+	  background-image: linear-gradient(pink, yellow, purple, orange);
+    }
+    .d {
+
+		/*
+		start at col2 and span 3 columns [2,3,4]
+		on row 2
+		*/
+      grid-column: col 2 / span  1 ;
+      grid-row: row 3 ;
+	  display: flex;
+	  justify-content: center;
+    }
+  
+    .e {
+
+		/*
+		first item, first column and span 5 columns [1]
+		on row 3
+		*/
+      grid-column: col 4 / span  1;
+      grid-row: row 3;
+	  display: flex;
+	  justify-content: center;
+    }
+  
+    .f {
+
+		/*
+		start at column 3 and span 3 columns [3,4,5]
+		on row 2
+
+		*/
+      grid-column: col 2 / span 3;
+      grid-row: row 2  ;
+      background-color: rgba(49,121,207, 0.5);
+      z-index: 20;
+	  display: flex;
+	  justify-content: center;
+	  background-image: linear-gradient(orange, purple, yellow, pink);
+    }
+
+	img{
+		height: 500px;
+		width: 500px;
+		object-fit: cover;
+	}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Me</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Comatible" content="ie-edge">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<h1>Contact Me</h1>
+	<nav>
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="contact2.html">Contact 2</a></li>
+		</ul>
+	</nav>
+
+	<br>
+
+	<h3>Forms using boilerplates</h3>
+	<form action="">
+		<input type="text" name="name" id="fullname" placeholder="Full Name" required>
+		<input type="email" name="email" id="email" placeholder="Email" required >
+		<input type="tel" name="phone_num" id="phone_num" placeholder="(011)853-0300" pattern="[\(]\d{3}[\)]\d{3}[\-]\d{4}" required>
+		<!-- pattern
+			(011)853-0300
+			[\(] -> [] to denote that a symbol will be used, \ to escape the symbol, and the symbol is "(" e.g. [\)] and [\-]
+
+			\d -> will denote that a digit is required , and {3} means that exactly 3 digits are required.
+			\d{3} = give me exactly 3 digits
+			\d{4} = give me exactly 4 digits
+
+		-->
+		<textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+		<button type="submit">Submit</button>
+	</form>
+
+	<form>
+
+	</form>
+
+</body>
+</html>
