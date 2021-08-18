@@ -2,19 +2,25 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" 
+		content="width=device-width, 
+		initial-scale=1.0">
+		<meta http-equiv="X-UA-Comatible" 
+		content="ie-edge">
 		<title>Demo HTML 5 Course</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 
+		<h1>My Web Page</h1>
 		<nav>
 			<ul>
-				<li><a href="">Home</a></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Contact</a></li>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</nav>
-		
+
 		<h1>This is an H1 heading</h1>
 		<h2>This is an H2 heading</h2>
 		<h3>This is an H3 heading</h3>
@@ -29,11 +35,21 @@
 			</p>
 		</div>
 
-		<div class="box">Box 1</div>
-		<div class="box">Box 2</div>
+		<img src="images/island1.jpg" width="500px" alt="Island 1" class="circleImage">
 
 		<a href="https://amazon.com">
 			<button>Go To Amazon</button>
 		</a>
-	</body4
+
+		<div class="flex-parent">
+			<p>Let's learn about flexbox. Flexbox needs a parent container in order to work. The elements inside of that container can be adjusted and centered and moved around easily</p>
+			<div class="box" id="box1">Box 1</div>
+			<div class="box" id="box2">Box 2</div>
+			<div class="box" id="box3">Box 3</div>
+			<div class="box" id="box4">Box 4</div>
+			<div class="box" id="box5">Box 5</div>
+			<div class="box" id="box6">Box 6</div>
+		</div>
+
+	</body>
 </html>
